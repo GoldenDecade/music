@@ -9,13 +9,10 @@
 export default {
   name: 'App',
   created() {
-  //  首次加载完成移除动画
+  //  首次加载完成移除动画~~
     if(document.querySelector('#appLoading')) {
       document.querySelector('#appLoading').classList.add('removeAnimate');
-      setTimeout(()=> {
-        document.body.removeChild(document.getElementById('appLoading'));
-        let version = getVersion(), newVersion = pkg.version;
-      }, 500)
+      
     }
   }
 }
