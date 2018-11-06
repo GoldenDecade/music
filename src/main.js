@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import mmToast from 'base/mm-toast'
+//toast 插件
+Vue.use(mmToast);
 Vue.config.productionTip = false
 import '@/assets/css/index.styl'
 /* eslint-disable no-new */
