@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="keywords" content="player">
+    <meta name="description" content="在线播放器">
+    <title>music player</title>
+    <style type="text/css">
+      noscript {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        background-color: #fff;
+        text-align: center;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 100px;
+      }
+      #appLoading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1996;
+        background-color: #fff;
+      }
+      #appLoading.removeAnimate {
+        -webkit-animation: removeAnimate 1s 0s 1 both;
+      }
+      @-webkit-keyframes removeAnimate {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      #appLoading img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+      }
+    </style>
+    <script>
+      (function () {
+        if (!!window.ActiveXObject || "ActiveXObject" in window) {
+          window.location = "http://music.mtnhao.com/tips.html";
+          return false
+        }
+      })();
+    </script>
+  </head>
+  <body>
+  <noscript>
+    Player在线音乐播放器<br/>为了更好的体验请开启script
+  </noscript>
+  <div id="appLoading" class="removeAnimate">
+    <img src="./static/loading.gif" alt="loading">
+  </div>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
