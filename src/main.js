@@ -6,12 +6,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import axios from 'axios'
-import VueLazyload from 'vue-lazyload'
 
-import mmToast from 'base/mm-toast'
+//网络请求
+import axios from 'axios'
+Vue.prototype.$http = axios;
+//懒加载
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+  preLoad: 1, // 图片宽高比例预设
+  loading: require('assets/img/default.png')
+})
 //toast 插件
+import mmToast from 'base/mm-toast'
 Vue.use(mmToast);
+
 Vue.config.productionTip = false
 import '@/assets/css/index.styl'
 
