@@ -1,8 +1,13 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import 'babel-polyfill'
+import 'assets/js/hack'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
+import axios from 'axios'
+import VueLazyload from 'vue-lazyload'
 
 import mmToast from 'base/mm-toast'
 //toast 插件
@@ -23,6 +28,7 @@ console.info(`%c${mmPlayer}`, `color:blue`);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
