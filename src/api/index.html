@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>Title</title>
+</head>
+<body>
+<audio id="audio" src=""></audio>
+<button id="btn">play</button>
+<script>
+  let url = 'http://m10.music.126.net/20181112150853/cc4f058bd233447e1da3ddfcde0bb16a/ymusic/2242/0271/8dd1/b6da3ffc8d2561b321284004c81da136.mp3'
+let audio = document.querySelector('#audio');
+let btn = document.querySelector('#btn');
+btn.onclick = function() {
+  audio.play();
+}
+audio.src = url;
+audio.onprogress = function() {
+  console.log('progress')
+  console.log(audio.buffered)// 返回timeRanges 对象； TimeRanges对象表示用户的音视频缓冲范围
+  console.log(audio.buffered.end(0))
+  console.log(audio)
+}
+audio.onplay = function() {
+  console.log('play');
+}
+audio.ontimeupdate = function() {//会一直触发
+  console.log(this.currentTime)
+}
+audio.onended = function() {
+  console.log('end')
+}
+
+</script>
+</body>
+</html>

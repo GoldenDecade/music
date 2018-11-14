@@ -33,7 +33,7 @@ Github：https://github.com/GoldenDecade/music
 歌曲来源于网易云音乐 (http://music.163.com)`;
 console.info(`%c${mmPlayer}`, `color:blue`);
 
-/* eslint-disable no-new */
+/* eslint- no-new */
 new Vue({
   el: '#app',
   store,

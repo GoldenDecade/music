@@ -16,7 +16,7 @@
       }
     },
     computed: {
-      positionClass() {
+      positionClasses() {
         return 'mm-toast-' + this.position;
       }
     }

@@ -3,8 +3,8 @@ let instance, showToast = false, time; // 存储toast显示装填
 const mmToast = {
   install(Vue, options = {}) {
     let opt = TempToast.data();// 获取组件中的默认配置
-    Object.assign(opt, options, duration); //合并配置
-    Vue.prototype.$mmToast = (message, position) => {
+    Object.assign(opt, options); //合并配置
+    Vue.prototype.$mmToast = (message, position, duration) => {
       if(showToast) {
         clearTimeout(time);
         instance.vm.visible = showToast = false;
@@ -30,6 +30,12 @@ const mmToast = {
         instance.vm.visible = showToast = false;
         document.body.removeChild(instance.vm.$el);
       }, opt.duration)
+      instance.close = ()=> {
+        clearTimeout(time);
+        instance.vm.visible = showToast = false;
+        document.body.removeChild(instance.vm.$el);
+      }
+      return instance;
     }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "name": "aserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "网易云音乐",
+    "网易云",
+    "音乐",
+    "网易云音乐nodejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "apicache": "^1.2.3",
+    "express": "^4.16.4"
+  }
+}
